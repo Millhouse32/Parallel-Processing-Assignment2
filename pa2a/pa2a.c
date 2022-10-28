@@ -1,21 +1,4 @@
-/* Author: Ryan McAllister-Grum
- * Class: CSC484A Intro to Parallel Processing
- * Assignment: HW-04
- *
- * Usage: ./Factorial <N> <T>
- *      <N>: Integer value to calculate factorial.
- *      <T>: Number of threads.
- *
- * Description: Factorial.c computes the factorial (N!)
- * for a user-provided non-negative integer, spread
- * out across the user-specified number of Pthreads.
- * In particular, the multiplication of all values
- * <= N to 1 will be evenly distributed over the
- * threads, where each thread computes its partial
- * product for its given values, and then they
- * return their value from the function, to which the
- * main thread will combine into the final product.
- */
+// PA2A Nicholas Miller
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -154,6 +137,5 @@ int main(int argc, char** argv) {
         elapsed += (stop.tv_nsec - start.tv_nsec) / 1000000000.0;
 
         printf("Time for size %d: %f\n", size, elapsed);
-    }
-    
+    }  
 }
