@@ -10,6 +10,7 @@
  */
 int n;
 long thread_count;
+char protection;
 // Global variable factorial holds the resulting factorial.
 long long int factorial = 1;
 // Global mutex that will be used to control updates to factorial.
@@ -26,8 +27,19 @@ struct factorial_args {
 // Get_Input reads in the user's input from the command line.
 void Get_Input(int argc, char **argv) {
         printf("Please enter the number of threads to use: ");
-        fflush(stdout);
+        fflush(stdin);
         scanf("%li", &thread_count);
+        fflush(stdin);
+        printf("Please enter a protection method\n");
+        printf("nothing ('n')\n");
+        printf("busy-waiting('b')\n");
+        printf("mutex('m')\n");
+        printf("semaphore('s')\n");
+        printf("write-lock('l')\n");
+        printf("Enter: ");
+        scanf(" %c", &protection);
+
+        printf("protection :: %c\n", protection);
 }
 
 /* Pth_Factorial computes the partial product for each
